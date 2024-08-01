@@ -1,4 +1,5 @@
 <template>
+  <!-- 搜索表单 -->
   <div class="app-container">
     <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
       <el-form-item label="课程编码" prop="code">
@@ -160,14 +161,14 @@ import { listCourse, getCourse, delCourse, addCourse, updateCourse } from "@/api
 const { proxy } = getCurrentInstance();
 
 const courseList = ref([]);
-const open = ref(false);
-const loading = ref(true);
-const showSearch = ref(true);
-const ids = ref([]);
-const single = ref(true);
+const open = ref(false); // 是否显示弹窗
+const loading = ref(true); // 表格的加载状态
+const showSearch = ref(true); // 搜索栏
+const ids = ref([]); // 复选框
+const single = ref(true); // 单选
 const multiple = ref(true);
-const total = ref(0);
-const title = ref("");
+const total = ref(0); // 总记录条数
+const title = ref(""); // 区分对话框的title
 
 const data = reactive({
   form: {},
