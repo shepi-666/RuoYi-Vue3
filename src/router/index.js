@@ -70,6 +70,16 @@ export const constantRoutes = [
       }
     ]
   },
+
+  {
+    path: '',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: '/tool/course',
+      component: () => import('@/views/course/course/index.vue')
+    }]
+  },
   {
     path: '/user',
     component: Layout,
